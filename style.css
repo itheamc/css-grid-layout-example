@@ -67,6 +67,7 @@ body {
     grid-area: sidebar;
     margin-right: 16px;
     max-height: 750px;
+    background-color: #031a2a;
 }
 
 #footer {
