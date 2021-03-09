@@ -1,0 +1,169 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #010d15;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    'header header header header'
+    'main main main sidebar'
+    'footer footer footer footer';
+    grid-gap: 16px;
+    align-content: center;
+}
+
+/* .grid-child {
+
+} */
+
+#header {
+    width: 100%;
+    min-height: 64px;
+    grid-area: header;
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #052339;
+    border-bottom: 1px solid #40494f;
+}
+
+#main {
+    min-height: 100vh;
+    grid-area: main;
+    margin-left: 16px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 16px;
+
+}
+
+#main > .post {
+    background-color: #031a2a;
+    padding: 20px;
+}
+
+/* #main > .post > #post-image {
+    height: 400px;
+}
+
+#main > .post > #post-title {
+    color: whitesmoke;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 8px 0 8px 0;
+    font-size: x-large;
+}
+#main > .post > #post-content {
+    color: rgba(245, 245, 245, 0.829);
+} */
+
+
+#sidebar {
+    grid-area: sidebar;
+    margin-right: 16px;
+    max-height: 750px;
+}
+
+#footer {
+    width: 100%;
+    grid-area: footer;
+    min-height: 100px;
+    background-color: #052339;
+}
+
+#header > .navbar {
+    display: flex;
+    text-align: center;
+    margin-right: 32px;
+}
+
+/* css for the ancor tag of the header */
+#header > .navbar > a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #959595;
+    padding: 8px 16px;
+    margin-left: 8px;
+    text-align: center;
+    line-height: 64px;
+    font-family: Ubuntu,sans-serif;
+    border-bottom: 2px solid transparent;
+    height: 64px;
+}
+#header > .navbar > a:hover {
+    border-bottom: 2px solid #fba342;
+    color: #fba342;
+    /* animation: indicator 0.5s linear 0 right; */
+}
+
+/* @keyframes indicator {
+
+} */
+
+#header > .title {
+    margin-left: 32px;
+    font-size: 32px;
+    font-weight: 900;
+    color: #fba342;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 64px;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 800px) {
+    .grid-container {
+        grid-template-areas: 
+        'header'
+        'main'
+        'footer';
+    }
+
+    #sidebar {
+        display: none;
+    }
+
+    #main {
+        margin-right: 16px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 8px;
+    }
+
+    #header {
+        grid-area: header;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #header > .title {
+        margin-left: 0;
+        font-size: 24px;
+    }
+
+    #header > .navbar > a {
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 4px 8px;
+        margin-left: 4px;
+        line-height: 40px;
+        height: 40px;
+    }
+
+
+    #header > .navbar {
+        margin-right: 0;
+    }
+
+    
+  }
